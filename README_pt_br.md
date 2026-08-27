@@ -39,5 +39,5 @@ Navegue até **Administração do site > Plugins > Plugins locais > Cards de Cat
 4. Salve as alterações.
 
 ## 👥 Autor e Licença
-* **Autor:** Roberto Neves
+* **Autor:** Roberto Sarcinelli Neves
 * **Licença:** Distribuído sob a licença GNU GPL v3 ou posterior.
