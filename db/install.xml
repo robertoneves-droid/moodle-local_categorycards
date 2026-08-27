@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/categorycards/db" VERSION="20260610" COMMENT="Database schema for local_categorycards"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_categorycards" COMMENT="Stores custom category card settings like background and font color">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="categoryid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="References course_categories.id"/>
+        <FIELD NAME="bgcolor" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="#0f5b9e" SEQUENCE="false" COMMENT="Hex code for background color"/>
+        <FIELD NAME="fontcolor" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="#ffffff" SEQUENCE="false" COMMENT="Hex code for font color"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="categoryid_unique" TYPE="unique" FIELDS="categoryid"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

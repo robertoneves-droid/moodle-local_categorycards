@@ -1,0 +1,169 @@
+/* CSS Styles for local_categorycards */
+
+/* Grid container to wrap all cards */
+.local-categorycards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 24px;
+    margin: 30px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Grid columns configurations (3 or 4 columns) on desktop/tablet devices */
+@media (min-width: 768px) {
+    .local-categorycards-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .local-categorycards-grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Adjust the grid container width when in 4 columns so cards maintain their original width */
+@media (min-width: 992px) {
+    .local-categorycards-grid-4 {
+        width: calc(133.33% + 8px);
+        margin-left: calc(-16.66% - 4px);
+        margin-right: calc(-16.66% - 4px);
+        max-width: calc(100vw - 80px);
+    }
+}
+
+/* Base Card structure */
+.local-categorycard {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 16px; /* Premium friendly geometry as per guidelines */
+    border: 1px solid rgba(0, 0, 0, 0.06); /* Soft border to define boundaries on white backgrounds */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.03); /* Rich displacement shadow */
+    overflow: hidden;
+    text-decoration: none !important; /* Remove Moodle link underline */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                border-color 0.4s ease;
+    height: 320px; /* Fixed height for portrait format */
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Card Hover effect - organic elevate */
+.local-categorycard:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Card Top Area (Cover Image/Icon) */
+.local-categorycard-top {
+    height: 180px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Custom uploaded image inside top area */
+.local-categorycard-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Micro-interaction: image scale on card hover */
+.local-categorycard:hover .local-categorycard-image {
+    transform: scale(1.05);
+}
+
+/* Fallback SVG Icon if no image uploaded */
+.local-categorycard-fallback {
+    width: 64px;
+    height: 64px;
+    color: #555555;
+    opacity: 0.8;
+}
+
+/* Card Bottom Area (Category Name and Details) */
+.local-categorycard-bottom {
+    padding: 24px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-color: #0f5b9e; /* Default background if not custom */
+    color: #ffffff; /* Default text color if not custom */
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Category Title styling */
+.local-categorycard-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+    font-family: inherit;
+    word-break: break-word;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Micro-motion for prefers-reduced-motion compatibility */
+@media (prefers-reduced-motion: reduce) {
+    .local-categorycard {
+        transition: none !important;
+    }
+    .local-categorycard:hover {
+        transform: none !important;
+    }
+    .local-categorycard:hover .local-categorycard-image {
+        transform: none !important;
+    }
+}
+
+/* Custom styles for native color inputs in edit form */
+input[type="color"] {
+    width: 64px;
+    height: 42px;
+    padding: 3px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input[type="color"]:focus {
+    outline: none;
+    border-color: #0f5b9e;
+    box-shadow: 0 0 0 3px rgba(15, 91, 158, 0.25);
+}
+
+/* Hidden category styling */
+.local-categorycard.dimmed {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border-color: rgba(0, 0, 0, 0.04) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+}
+
+.local-categorycard.dimmed .local-categorycard-top {
+    background-color: transparent !important;
+}
+
+.local-categorycard.dimmed .local-categorycard-image {
+    opacity: 0.5 !important;
+}
+
+.local-categorycard.dimmed .local-categorycard-fallback {
+    opacity: 0.4 !important;
+}
