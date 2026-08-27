@@ -39,3 +39,4 @@ $string['setting_columns'] = 'Colunas do Layout';
 $string['setting_columns_desc'] = 'Escolha o número de colunas a serem exibidas em telas grandes. O modo Automático usará uma grade responsiva dinâmica.';
 $string['setting_enabled'] = 'Ativar Plugin';
 $string['setting_enabled_desc'] = 'Ativa ou desativa a exibição em cards de categorias globalmente no site Moodle.';
+$string['privacy:metadata'] = 'O plugin de cards de categoria não armazena dados pessoais dos usuários.';

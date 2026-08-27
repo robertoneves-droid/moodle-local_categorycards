@@ -38,5 +38,6 @@ Go to **Site administration > Plugins > Local plugins > Category Cards** to conf
 3. Set your desired colors and upload a cover image.
 4. Save the changes.
 
-## 👥 License
-Licensed under the GNU GPL v3 or later.
+## 👥 Author & License
+* **Author:** Roberto Neves
+* **License:** Licensed under the GNU GPL v3 or later.

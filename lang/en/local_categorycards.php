@@ -39,3 +39,4 @@ $string['setting_columns'] = 'Layout Columns';
 $string['setting_columns_desc'] = 'Choose the number of columns to display on large screens. Auto will use a dynamic responsive grid.';
 $string['setting_enabled'] = 'Enable Plugin';
 $string['setting_enabled_desc'] = 'Enable or disable the category cards layout globally on your Moodle site.';
+$string['privacy:metadata'] = 'The category cards plugin does not store any personal user data.';

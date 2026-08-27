@@ -38,5 +38,6 @@ Navegue até **Administração do site > Plugins > Plugins locais > Cards de Cat
 3. Defina as cores de sua preferência usando o seletor e envie a imagem de capa desejada.
 4. Salve as alterações.
 
-## 👥 Licença
-Distribuído sob a licença GNU GPL v3 ou posterior.
+## 👥 Autor e Licença
+* **Autor:** Roberto Neves
+* **Licença:** Distribuído sob a licença GNU GPL v3 ou posterior.
