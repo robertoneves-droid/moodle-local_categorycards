@@ -39,5 +39,5 @@ Go to **Site administration > Plugins > Local plugins > Category Cards** to conf
 4. Save the changes.
 
 ## 👥 Author & License
-* **Author:** Roberto Neves
+* **Author:** Roberto Sarcinelli Neves
 * **License:** Licensed under the GNU GPL v3 or later.
