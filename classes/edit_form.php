@@ -18,7 +18,7 @@
  * Edit form for category cards.
  *
  * @package    local_categorycards
- * @copyright  2026 Moodle
+ * @copyright  2026 Roberto Neves
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -31,7 +31,7 @@ require_once($CFG->libdir . '/formslib.php');
  * Form for editing category cards settings.
  *
  * @package    local_categorycards
- * @copyright  2026 Moodle
+ * @copyright  2026 Roberto Neves
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class edit_form extends \moodleform {

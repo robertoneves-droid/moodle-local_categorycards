@@ -18,7 +18,7 @@
  * Edit category cards settings page.
  *
  * @package    local_categorycards
- * @copyright  2026 Moodle
+ * @copyright  2026 Roberto Neves
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

@@ -14,25 +14,19 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_categorycards\privacy;
-
-defined('MOODLE_INTERNAL') || die();
-
 /**
- * Privacy Subsystem for local_categorycards.
+ * Hook callbacks registration for local_categorycards.
  *
  * @package    local_categorycards
  * @copyright  2026 Roberto Neves
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class provider implements \core_privacy\local\metadata\null_provider {
 
-    /**
-     * Get the language string identifier explaining why this plugin stores no data.
-     *
-     * @return string
-     */
-    public static function get_reason() : string {
-        return 'privacy:metadata';
-    }
-}
+defined('MOODLE_INTERNAL') || die();
+
+$callbacks = [
+    [
+        'hook' => \core\hook\output\before_footer_html_generation::class,
+        'callback' => 'local_categorycards\hook_callbacks::before_footer_html_generation',
+    ],
+];

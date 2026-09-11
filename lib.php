@@ -18,7 +18,7 @@
  * Library functions for local_categorycards.
  *
  * @package    local_categorycards
- * @copyright  2026 Moodle
+ * @copyright  2026 Roberto Neves
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -79,65 +79,4 @@ function local_categorycards_pluginfile($course, $cm, $context, $filearea, $args
     }
 
     send_stored_file($file, 0, 0, $forcedownload, $options);
-}
-
-/**
- * Hook to inject card styling and configuration on pages where categories are listed.
- */
-function local_categorycards_before_footer() {
-    global $PAGE, $DB;
-
-    // Check if plugin is enabled globally.
-    $enabled = get_config('local_categorycards', 'enabled');
-    if ($enabled === '0' || $enabled === 0) {
-        return;
-    }
-
-    // We target pages that list categories: frontpage, site homepage, and course category listings.
-    $targetlayouts = ['frontpage', 'coursecat', 'site'];
-    if (in_array($PAGE->pagelayout, $targetlayouts)) {
-        $categoriesvisible = $DB->get_records_menu('course_categories', null, '', 'id, visible');
-        $records = $DB->get_records('local_categorycards');
-        $categorydata = [];
-
-        foreach ($records as $record) {
-            $context = \context_coursecat::instance($record->categoryid);
-            $fs = get_file_storage();
-            $files = $fs->get_area_files($context->id, 'local_categorycards', 'cardimage', 0, 'id, filepath, filename', false);
-            $imageurl = null;
-
-            if (!empty($files)) {
-                foreach ($files as $file) {
-                    if ($file->is_directory()) {
-                        continue;
-                    }
-                    $url = \moodle_url::make_pluginfile_url(
-                        $context->id,
-                        'local_categorycards',
-                        'cardimage',
-                        0,
-                        $file->get_filepath(),
-                        $file->get_filename()
-                    );
-                    $imageurl = $url->out(false);
-                    break;
-                }
-            }
-
-            $visible = isset($categoriesvisible[$record->categoryid]) ? (int)$categoriesvisible[$record->categoryid] : 1;
-
-            $categorydata[$record->categoryid] = [
-                'bgcolor' => $record->bgcolor,
-                'fontcolor' => $record->fontcolor,
-                'imageurl' => $imageurl,
-                'visible' => $visible,
-            ];
-        }
-
-        // Retrieve column configuration.
-        $columns = get_config('local_categorycards', 'columns') ?: 'auto';
-
-        // Inject compiled AMD Javascript code.
-        $PAGE->requires->js_call_amd('local_categorycards/cards', 'init', [$categorydata, $columns]);
-    }
 }

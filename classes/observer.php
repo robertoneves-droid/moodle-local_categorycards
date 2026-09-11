@@ -18,7 +18,7 @@
  * Event observers implementation for local_categorycards.
  *
  * @package    local_categorycards
- * @copyright  2026 Moodle
+ * @copyright  2026 Roberto Neves
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -28,7 +28,7 @@ namespace local_categorycards;
  * Event observer class for local_categorycards.
  *
  * @package    local_categorycards
- * @copyright  2026 Moodle
+ * @copyright  2026 Roberto Neves
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class observer {
