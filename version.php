@@ -18,7 +18,7 @@
  * Version details for local_categorycards.
  *
  * @package    local_categorycards
- * @copyright  2026 Moodle
+ * @copyright  2026 Roberto Neves
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -30,8 +30,8 @@ if (!defined('MATURITY_STABLE')) {
     define('MATURITY_STABLE', 200);
 }
 
-$plugin->version   = 2026061000;
+$plugin->version   = 2026091100;
 $plugin->requires  = 2023100900; // Requiring Moodle 4.3 or later.
 $plugin->component = 'local_categorycards';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = '1.0.0';
+$plugin->release   = '1.0.1';
